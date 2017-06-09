@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoreML_Object_Recognition" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera-add" translatesAutoresizingMaskIntoConstraints="NO" id="ksg-10-Lm9">
+                                <rect key="frame" x="16" y="20" width="343" height="350"/>
+                                <color key="backgroundColor" red="0.970793656075981" green="0.970793656075981" blue="0.970793656075981" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="frh-s7-CZC"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PtQ-5M-9t6">
+                                <rect key="frame" x="127" y="390" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7oX-4f-eT8"/>
+                                    <constraint firstAttribute="width" constant="120" id="hhw-Jh-cB9"/>
+                                </constraints>
+                                <state key="normal" title="Choose image"/>
+                                <connections>
+                                    <action selector="chooseImageBtnTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Su-me-Bmq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🤔" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cFT-iM-qJT">
+                                <rect key="frame" x="16" y="425" width="343" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="23A-ju-9KR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cFT-iM-qJT" firstAttribute="top" secondItem="PtQ-5M-9t6" secondAttribute="bottom" constant="5" id="1Bx-mZ-Ues"/>
+                            <constraint firstItem="ksg-10-Lm9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8V8-H8-8XX"/>
+                            <constraint firstItem="cFT-iM-qJT" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Z9f-i1-ZnI"/>
+                            <constraint firstItem="cFT-iM-qJT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="azC-li-Gly"/>
+                            <constraint firstItem="ksg-10-Lm9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ehb-aS-fGl"/>
+                            <constraint firstItem="PtQ-5M-9t6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k43-Gk-T1K"/>
+                            <constraint firstItem="ksg-10-Lm9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="r1R-Mn-Tez"/>
+                            <constraint firstItem="PtQ-5M-9t6" firstAttribute="top" secondItem="ksg-10-Lm9" secondAttribute="bottom" constant="20" id="wX0-YF-fdI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="ksg-10-Lm9" id="3KN-XA-PTf"/>
+                        <outlet property="predictionLabel" destination="cFT-iM-qJT" id="AwI-j0-OH9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera-add" width="64" height="64"/>
+    </resources>
+</document>
